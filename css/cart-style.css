@@ -1,0 +1,95 @@
+@charset "UTF-8";
+.cart {
+  position: fixed;
+  top: 0;
+  left: 0; /* изменено */
+  bottom: 0;
+  width: 400px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.cart__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  bottom: 0; /* изменено */
+  left: 20px; /* изменено */
+  right: 20px; /* изменено */
+}
+
+.cart__title {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.cart__items {
+  margin-bottom: 40px;
+}
+
+.cart__subtotal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cart__subtotal-text {
+  font-size: 18px;
+  font-weight: 600;
+  margin-right: 20px;
+}
+
+.cart__subtotal-price {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cart__checkout-btn {
+  background-color: #6A983C;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 20px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+.cart__checkout-btn:hover {
+  background-color: #46760A;
+}
+
+.back-to-home-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #6A983C;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-home-btn:hover {
+  background-color: #46760A;
+}

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://fonts.googleapis.com/css?family=Poppins:500,600,700&display=swap&subset=cyrillic-ext" rel="stylesheet" />
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:regular&display=swap&subset=cyrillic-ext" rel="stylesheet" />
+   <link rel="stylesheet" href="css/all.css">
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/responsive.css">
+   <title>mini e-commerce</title>
+</head>
+<body>
+   <div class="wrapper">
+      <div class="popup">
+         <div class="popup__body">
+            <div class="popup__close popup-close">&#10006;</div>
+         </div>
+      </div>
+      <div class="popup-categories">
+         <div class="popup-categories__body">
+            <div class="popup-categories__close popup-close">&#10006;</div>
+         </div>
+      </div>
+      <header class="header">
+         <div class="header__container container">
+            <div class="header__title-container">
+               <h1 class="header__title">Fruit and vegetables</h1>
+               <a href="/index-cart.html" class="header__basket">
+                  <img src="icons/basket.svg" alt="">
+               </a>
+            </div>
+            <div class="header__top-filter">
+               <div class="header__popular popular">
+                  <input type="radio" name="headerRadio" class="popular__radio-btn radio-btn__popular">
+                  <p class="popular__title top-filter-title">Most popular</p>
+               </div>
+               <div class="header__cheapest-block cheapest">
+                  <input type="radio" name="headerRadio" class="popular__radio-btn radio-btn__popular">
+                  <p class="cheapest__title top-filter-title">Cheapest</p>
+               </div>
+            </div>
+            <div class="header__mobile-menu mobile-menu">
+               <div class="mobile-menu__categories mobile-menu__list"><button id="categories">Categories</button></div>
+               <div class="mobile-menu__filters mobile-menu__list"><button id="filters">Filters</button></div>
+            </div>
+         </div>
+      </header>
+      <main class="main">
+         <div class="main__container container">
+            <aside class="main__aside aside">
+               <div class="aside__categories">
+                  <h2 class="categories__title aside-title">Categories</h2>
+                  <div class="aside__body">
+                     <p class="aside__item item-aside">Vegetables</p>
+                     <div class="aside__count-block"><p class="aside__count">320</p></div>
+                  </div>
+                  <div class="aside__body">
+                     <p class="aside__item item-aside">Fruits</p>
+                     <div class="aside__count-block"><p class="aside__count">112</p></div>
+                  </div>
+                  <div class="aside__body">
+                     <p class="aside__item item-aside">Kitchen Accessories</p>
+                     <div class="aside__count-block"><p class="aside__count">32</p></div>
+                  </div>
+                  <div class="aside__body">
+                     <p class="aside__item item-aside">Chefs Tips</p>
+                     <div class="aside__count-block"><p class="aside__count">48</p></div>
+                  </div>
+               </div>
+               <div class="aside__brands">
+                  <h2 class="brands__title aside-title">Brands</h2>
+                  <div class="brands__field-body">
+                     <input data-filter="Royal Fields" id="RF" name="RF" type="checkbox" class="brands__field field">
+                     <label for="RF" class="brands__field-title label-input">Royal Fields</label>
+                  </div>
+                  <div class="brands__field-body">
+                     <input data-filter="Crasmas Fields" id="CF" type="checkbox" class="brands__field field">
+                     <label for="CF" class="brands__field-title label-input">Crasmas Fields</label>
+                  </div>
+                  <div class="brands__field-body">
+                     <input data-filter="Vegetarisma Farm" id="VF" type="checkbox" class="brands__field field">
+                     <label for="VF" class="brands__field-title label-input">Vegetarisma Farm</label>
+                  </div>
+                  <div class="brands__field-body">
+                     <input data-filter="Farmer Field Eve" id="FFE" type="checkbox" class="brands__field field">
+                     <label for="FFE" class="brands__field-title label-input">Farmer Field Eve</label>
+                  </div>
+                  <div class="brands__field-body">
+                     <input data-filter="True Farmer Steve" id="TFS" type="checkbox" class="brands__field field">
+                     <label for="TFS" class="brands__field-title label-input">True Farmer Steve</label>
+                  </div>
+               </div>
+               <div class="aside__rating rating">
+                  <h2 class="rating__title aside-title">Rating</h2>
+                  <div class="rating__body">
+                     <div class="rating__item">
+                        <input data-filter="1" id="stars5" name="1" type="checkbox" class="rating__field field">
+                        <label for="stars5" class="rating__stars label-input">
+                           <img src="icons/Star.svg" alt="">
+                           <img src="icons/Outline-star.svg" alt="">
+                           <img src="icons/Outline-star.svg" alt="">
+                           <img src="icons/Outline-star.svg" alt="">
+                           <img src="icons/Outline-star.svg" alt="">
+                        </label>
+                     </div>
+                     <div class="rating__item">
+                        <input data-filter="2" id="stars4" name="2" type="checkbox" class="rating__field field">
+                        <label for="stars4" class="rating__stars label-input">
+                           <img src="icons/Star.svg" alt="">
+                           <img src="icons/Star.svg" alt="">
+                           <img src="icons/Outline-star.svg" alt="">
+                           <img src="icons/Outline-star.svg" alt="">
+                           <img src="icons/Outline-star.svg" alt="">
+                        </label>
+                     </div>
+                     <div class="rating__item">
+                        <input data-filter="3" id="stars3" name="3" type="checkbox" class="rating__field field">
+                        <label for="stars3" class="rating__stars label-input">
+                           <img src="icons/Star.svg" alt="">
+                           <img src="icons/Star.svg" alt="">
+                           <img src="icons/Star.svg" alt="">
+                           <img src="icons/Outline-star.svg" alt="">
+                           <img src="icons/Outline-star.svg" alt="">
+                        </label>
+                     </div>
+                     <div class="rating__item">
+                        <input data-filter="4" id="stars2" name="4" type="checkbox" class="rating__field field">
+                        <label for="stars2" class="rating__stars label-input">
+                           <img src="icons/Star.svg" alt="">
+                           <img src="icons/Star.svg" alt="">
+                           <img src="icons/Star.svg" alt="">
+                           <img src="icons/Star.svg" alt="">
+                           <img src="icons/Outline-star.svg" alt="">
+                        </label>
+                     </div>
+                     <div class="rating__item">
+                        <input data-filter="5" id="stars1" name="5" type="checkbox" class="rating__field field">
+                        <label for="stars1" class="rating__stars label-input">
+                           <img src="icons/Star.svg" alt="">
+                           <img src="icons/Star.svg" alt="">
+                           <img src="icons/Star.svg" alt="">
+                           <img src="icons/Star.svg" alt="">
+                           <img src="icons/Star.svg" alt="">
+                        </label>
+                     </div>
+                  </div>
+               </div>
+               <div class="aside__price price">
+                  <h2 class="price__title aside-title">Price</h2>
+                  <div class="price__slider-container">
+                     <div class="price__slider">
+                        <div class="slider__active-line"></div>
+                        <input type="range" class="slider__min-thumb thumbs" min="0" max="100" value="0">
+                        <input type="range" class="slider__max-thumb thumbs" min="0" max="100" value="100">
+                     </div>
+                  </div>
+                  <div class="price__num-inputs num-inputs">
+                     <div class="num-inputs__field">
+                        <span class="num-inputs__minmax">Min</span>
+                        <input type="number" class="num-inputs__min-input num-inputs-field" min="0" max="100" value="0">
+                     </div>
+                     <div class="num-inputs__field">
+                        <span class="num-inputs__minmax">Max</span>
+                        <input type="number" class="num-inputs__max-input num-inputs-field" min="0" max="100" value="100">
+                     </div>
+                  </div>
+                  <div class="price__apply-btns">
+                     <button class="price__apply-reset apply">Apply</button>
+                     <button class="price__apply-reset reset">Reset</button>
+                  </div>
+               </div>
+            </aside>
+            <section class="main__goods goods">
+               <!-- Карточки товаров написаны в app.js function goodsHTML -->
+            </section>
+         </div>
+      </main>
+
+      <template id="mobile-range-slider">
+         <h2 class="price__title aside-title mobile-price">Price</h2>
+         <div class="price__slider-container">
+            <div class="price__slider">
+               <div class="slider__active-line-mobile"></div>
+               <input type="range" class="slider__min-thumb thumbs-mobile" min="0" max="100" value="0">
+               <input type="range" class="slider__max-thumb thumbs-mobile" min="0" max="100" value="100">
+            </div>
+         </div>
+         <div class="price__num-inputs num-inputs">
+            <div class="num-inputs__field">
+               <span class="num-inputs__minmax">Min</span>
+               <input type="number" class="num-inputs__min-input num-inputs-field-mobile" min="0" max="100" value="0">
+            </div>
+            <div class="num-inputs__field">
+               <span class="num-inputs__minmax">Max</span>
+               <input type="number" class="num-inputs__max-input num-inputs-field-mobile" min="0" max="100" value="100">
+            </div>
+         </div>
+         <div class="price__apply-btns">
+            <button class="price__apply-reset apply">Apply</button>
+            <button class="price__apply-reset reset">Reset</button>
+         </div>
+      </template>
+
+   </div>
+   <script type="module" src="js/app.js"></script>
+</body>
+</html>
