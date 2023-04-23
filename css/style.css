@@ -241,7 +241,7 @@ input[type=checkbox]:checked {
 }
 
 input[type=checkbox]::after {
-  content: url(/icons/check.svg);
+  content: url(../icons/check.svg);
   -webkit-transform: translateY(1px);
           transform: translateY(1px);
 }

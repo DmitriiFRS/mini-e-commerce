@@ -186,7 +186,7 @@ input[type=checkbox]:checked {
    border: 1.5px solid #46760A;
 }
 input[type=checkbox]::after {
-   content: url(/icons/check.svg);
+   content: url(../icons/check.svg);
    transform: translateY(1px);
 }
 .field-active {
