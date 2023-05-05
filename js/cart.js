@@ -4,6 +4,10 @@ const cartBody = document.querySelector('.main-body');
 const totalPrice = document.querySelector('.sidebar__total-price');
 const cartObj = JSON.parse(localStorage.getItem('obj'));
 let total = 0;
+if (Object.keys(cartObj).length === 0) {
+   cartBody.innerHTML = 'Ваша корзина пуста';
+   cartBody.style.fontSize = '30px';
+}
 for(let key in cartObj) {
    const findElemByName = goodsList.find(obj => obj.item === cartObj[key]);
    displayElem(findElemByName, key);
@@ -52,6 +56,8 @@ function removeFunc() {
    localStorage.setItem('obj', JSON.stringify(newObj));
    if (Object.keys(newObj).length === 0) {
       totalPrice.innerHTML = '$' + '0.00';
+      cartBody.innerHTML = 'Ваша корзина пуста';
+      cartBody.style.fontSize = '30px';
    }
    else {
       for(let key in newObj) {
