@@ -33,6 +33,26 @@ body {
       display: flex;
       align-items: center;
       margin: 0 0 0 10px;
+      position: relative;
+      img {
+         width: 35px;
+      }
+   }
+   &__stash-count {
+      background: #8eca1e;
+      border-radius: 50%;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      display: none;
+      &:active {
+         color: #000000;
+      }
    }
    &__top-filter {
       display: inline-flex;
@@ -389,23 +409,20 @@ input[type=checkbox]::after {
          color: #A9A9A9;
       }
    }
-   &__btn-body {
+   &__buy-btn {
       background: #6A983C;
-      border: 2px solid #46760A;
+      padding: 6.5px 12px;
+      color: #FFFFFF;
       border-radius: 12px;
-      transition: 0.3s;
       height: 36px;
       display: flex;
       align-items: center;
+      z-index: 20;
+      border: 2px solid #46760A;
       &:hover {
-         background: #386809;
+         background: #4e8a11;
          border: 2px solid #2d4d05;
          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      }
-      .goods__buy-btn {
-         padding: 6.5px 12px;
-         display: inline-block;
-         color: #FFFFFF;
       }
    }
 }
@@ -471,4 +488,18 @@ appearance: none;
    right: 0%;
    border-radius: 12px;
 }
-// mobile range-slider
+.buy-popup {
+   position: fixed;
+   top: 5px;
+   left: 50%;
+   padding: 20px 50px;
+   background: rgba($color: #0f8637, $alpha: 0.7);
+   display: none;
+   transition: opacity 0.3s ease, transform 0.3s ease;
+   transform: translateY(-120%);
+   opacity: 0;
+   z-index: 100;
+   &__body {
+      font-size: 20px;
+   }
+}

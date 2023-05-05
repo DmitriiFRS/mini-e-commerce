@@ -1,27 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="css/cart-style.css">
-   <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/cart-style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:regular&display=swap&subset=cyrillic-ext" rel="stylesheet" />
+  <link rel="stylesheet" href="css/responsive.css">
+  <title>Cart</title>
 </head>
 <body>
-   <div class="cart">
-      <h2 class="cart__title">Корзина</h2>
-      <a href="/" class="back-to-home-btn">Вернуться на главную</a>
-      <div class="cart__items">
-      <h1 style="font-size: 50px;">В разработке</h1>
-        <!-- Здесь будут отображаться товары в корзине -->
+  <div class="wrapper">
+    <aside class="sidebar">
+      <div class="sidebar__top">
+        <h2 class="sidebar__title">Корзина</h2>
+        <a href="index.html" class="sidebar__back">Вернуться к покупкам</a>
       </div>
-      <div class="cart__footer">
-        <div class="cart__subtotal">
-          <p class="cart__subtotal-text">Итого:</p>
-          <p class="cart__subtotal-price">$0.00</p>
+      <div class="sidebar__bottom">
+        <div class="sidebar__total">
+          <h3 class="sidebar__total-title">Total:</h3>
+          <span class="sidebar__total-price">$0.00</span>
         </div>
-        <button class="cart__checkout-btn">Оформить заказ</button>
+        <button class="sidebar__buy">Оформить заказ</button>
       </div>
-    </div>
+    </aside>
+    <main class="main-body">
+      <template id="cart-items">
+        <div class="main__item item-main">
+          <div class="item-main__first-wrapper">
+            <div class="item-main__num"></div>
+            <img class="item-main__img" src="" alt="">
+            <h2 class="item-main__title"></h2>
+          </div>
+          <div class="item-main__second-wrapper">
+            <p class="item-main__price"></p>
+            <img src="icons/trash.svg" alt="" class="item-main__remove">
+          </div>
+        </div>
+      </template>
+    </main>
+  </div>
+  <script type="module" src="js/cart.js"></script>
 </body>
 </html>

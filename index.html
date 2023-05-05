@@ -6,7 +6,6 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href="https://fonts.googleapis.com/css?family=Poppins:500,600,700&display=swap&subset=cyrillic-ext" rel="stylesheet" />
    <link href="https://fonts.googleapis.com/css?family=Open+Sans:regular&display=swap&subset=cyrillic-ext" rel="stylesheet" />
-   <link rel="stylesheet" href="css/all.css">
    <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/responsive.css">
    <title>mini e-commerce</title>
@@ -18,6 +17,9 @@
             <div class="popup__close popup-close">&#10006;</div>
          </div>
       </div>
+      <div class="buy-popup">
+         <p class="buy-popup__body">Товар добавлен в корзину</p>
+      </div>
       <div class="popup-categories">
          <div class="popup-categories__body">
             <div class="popup-categories__close popup-close">&#10006;</div>
@@ -28,7 +30,8 @@
             <div class="header__title-container">
                <h1 class="header__title">Fruit and vegetables</h1>
                <a href="/index-cart.html" class="header__basket">
-                  <img src="icons/basket.svg" alt="">
+                  <img src="icons/basket.svg" alt="Cart">
+                  <div class="header__stash-count"></div>
                </a>
             </div>
             <div class="header__top-filter">

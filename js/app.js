@@ -120,9 +120,7 @@ function goodsHTML (arr) {
                <h3 class="goods__main-price">${price(arr, i)}</h3>
                <p class="goods__old-price">${oldprice(arr, i)}</p>
             </div>
-            <div class="goods__btn-body">
-               <a href="/basket" class="goods__buy-btn">Buy now</a>
-            </div>
+            <button class="goods__buy-btn">Buy now</button>
          </div>
       </div>
       `
@@ -150,6 +148,7 @@ function rating(array) {
          }
       }
    })
+   cart();
 }
 rating(goodsList);
 let temp = JSON.parse(JSON.stringify(goodsList));
@@ -175,6 +174,7 @@ function filters(arr, elem) {
    }
    goodsHTML(arr);
    rating(arr);
+   cart();
 }
 
 headerRadio.forEach((item) => {
@@ -212,6 +212,7 @@ function resetFunc () {
    activeLineMobile.style.right = 100 - parseInt(thumbs[1].value) + "%";
    thumbsMobile[0].value = 0;
    thumbsMobile[1].value = 100;
+   cart();
 }
 
 function filtered() {
@@ -258,13 +259,51 @@ function filtered() {
       goodsHTML(temp2);
       rating(temp2);
    };
+   cart();
    return temp2;
 };
 apply.forEach(item => {item.addEventListener('click', filtered)});
 reset.forEach(item => {item.addEventListener('click', resetFunc)});
-
-
-
-
-
-
+function cart() {
+   const buyBtns = document.querySelectorAll('.goods__buy-btn');
+   const goodsCount = document.querySelector('.header__stash-count');
+   const buyPopup = document.querySelector('.buy-popup');
+   let count = localStorage.getItem('count') || 0;
+   console.log(Object.keys(localStorage))
+   if (count > 0) {
+      goodsCount.style.display = 'flex';
+      goodsCount.textContent = count;
+   }
+   function addToCart() {
+      count++;
+      if (count > 0) {
+         goodsCount.style.display = 'flex';
+         goodsCount.textContent = count;
+      }
+      buyPopup.style.display = 'block';
+      setTimeout(() => {
+         buyPopup.style.opacity = '1';
+         buyPopup.style.transform = 'translateY(0%)';
+      }, 0);
+      setTimeout(() => {
+         buyPopup.style.opacity = '0';
+         buyPopup.style.transform = 'translateY(-120%)';
+         setTimeout(() => {
+            buyPopup.style.display = 'none';
+         },300)
+      },1500)
+      //function findPrice() {
+        // if (typeof goodsList[index].price === 'object') {
+        //    return goodsList[index].price.newPrice;
+        // }
+        // else return goodsList[index].price;
+      //}
+      const cartObj = JSON.parse(localStorage.getItem('obj')) || {};
+      const titleElem = this.closest('.goods__item').querySelector('.goods__title').textContent;
+      cartObj[count] = titleElem;
+      console.log(cartObj);
+      localStorage.setItem('obj', JSON.stringify(cartObj));
+      localStorage.setItem('count', count);
+   }
+   buyBtns.forEach((item) => item.addEventListener('click', addToCart));
+}

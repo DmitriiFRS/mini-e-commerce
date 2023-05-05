@@ -46,6 +46,32 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin: 0 0 0 10px;
+  position: relative;
+}
+.header__basket img {
+  width: 35px;
+}
+.header__stash-count {
+  background: #8eca1e;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: none;
+}
+.header__stash-count:active {
+  color: #000000;
 }
 .header__top-filter {
   display: -webkit-inline-box;
@@ -499,12 +525,11 @@ input[type=checkbox]::after {
   line-height: 150%;
   color: #A9A9A9;
 }
-.goods__btn-body {
+.goods__buy-btn {
   background: #6A983C;
-  border: 2px solid #46760A;
+  padding: 6.5px 12px;
+  color: #FFFFFF;
   border-radius: 12px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
   height: 36px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -512,17 +537,14 @@ input[type=checkbox]::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 20;
+  border: 2px solid #46760A;
 }
-.goods__btn-body:hover {
-  background: #386809;
+.goods__buy-btn:hover {
+  background: #4e8a11;
   border: 2px solid #2d4d05;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-.goods__btn-body .goods__buy-btn {
-  padding: 6.5px 12px;
-  display: inline-block;
-  color: #FFFFFF;
 }
 
 input[type=range] {
@@ -601,5 +623,25 @@ input[type=number]::-webkit-inner-spin-button {
   left: 0%;
   right: 0%;
   border-radius: 12px;
+}
+
+.buy-popup {
+  position: fixed;
+  top: 5px;
+  left: 50%;
+  padding: 20px 50px;
+  background: rgba(15, 134, 55, 0.7);
+  display: none;
+  -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
+  -webkit-transform: translateY(-120%);
+          transform: translateY(-120%);
+  opacity: 0;
+  z-index: 100;
+}
+.buy-popup__body {
+  font-size: 20px;
 }
 /*# sourceMappingURL=style.css.map */
